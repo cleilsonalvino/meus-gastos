@@ -69,3 +69,25 @@ document.getElementById('openSheetsButton').addEventListener('click', function (
         alert('Erro ao enviar dados.');
       }
     }
+
+
+    const toggleThemeButton = document.getElementById('toggle-theme');
+
+    toggleThemeButton.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+    });
+
+    // Opcional: Salvar a preferência de tema no localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+
+    toggleThemeButton.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
