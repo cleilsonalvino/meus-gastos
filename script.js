@@ -25,13 +25,17 @@ document.getElementById('openSheetsButton').addEventListener('click', function (
       loader.style.visibility = 'visible'   
 
 
+      if (!item || !valor || !data) {
+        alert('Por favor, preencha todos os campos.');
+        return;
+      }
+
       const newData = {
         data: [
           {
             Data: data,
             Item: item,
             Valor: valor
-            
           }
         ]
       };
