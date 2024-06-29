@@ -38,7 +38,12 @@ h2 {
   text-align: center;
   font-size: small;
   font-family: monospace;
-  padding-top: 150px;
+  padding-top: 100px;
+}
+h3{
+  color: white;
+  font-size: small;
+  font-family: monospace;
 }
 
 
