@@ -8,10 +8,10 @@ document.getElementById('openSheetsButton').addEventListener('click', function (
                 window.location.href = webUrl;
         });
 
-
+    const sheetdbUrl = 'https://sheetdb.io/api/v1/w08mrc2fae3wv'
     async function Enviar() {
       const item = document.getElementById('item').value;
-      const valor = document.getElementById('valor').value;
+      const valor = parseFloat(document.getElementById('valor').value);
       const data = document.getElementById('data').value;
 
       setTimeout(()=>{
@@ -25,17 +25,13 @@ document.getElementById('openSheetsButton').addEventListener('click', function (
       loader.style.visibility = 'visible'   
 
 
-      if (!item || !valor || !data) {
-        alert('Por favor, preencha todos os campos.');
-        return;
-      }
-
       const newData = {
         data: [
           {
+            Data: data,
             Item: item,
-            Valor: valor,
-            Data: data
+            Valor: valor
+            
           }
         ]
       };
