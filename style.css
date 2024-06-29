@@ -24,7 +24,7 @@ body{
    align-items: center;
    margin-top: 30%;
    height: 100vh;
-  background-image: url(/public/images/fundo.jpg);
+  background-image: url(images/fundo.jpg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
