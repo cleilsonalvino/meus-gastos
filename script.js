@@ -70,5 +70,42 @@ document.getElementById('openSheetsButton').addEventListener('click', function (
       }
     }
 
-
-    
+    document.addEventListener('DOMContentLoaded', () => {
+      const uploadBtn = document.getElementById('uploadBtn');
+      const resetBtn = document.getElementById('resetBtn');
+      const defaultImageURL = 'images/fundo.jpg'; // URL da imagem padrão
+  
+      // Função para carregar a imagem de fundo do localStorage ou a padrão
+      function loadBackgroundImage() {
+          const storedImage = localStorage.getItem('backgroundImage');
+          if (storedImage) {
+              document.body.style.backgroundImage = `url(${storedImage})`;
+          } else {
+              document.body.style.backgroundImage = `url(${defaultImageURL})`;
+          }
+      }
+  
+      // Carregar a imagem de fundo ao iniciar
+      loadBackgroundImage();
+  
+      // Adicionar evento de mudança para o botão de upload
+      uploadBtn.addEventListener('change', function (event) {
+          const file = event.target.files[0];
+          if (file) {
+              const reader = new FileReader();
+              reader.onload = function (e) {
+                  const dataURL = e.target.result;
+                  localStorage.setItem('backgroundImage', dataURL);
+                  document.body.style.backgroundImage = `url(${dataURL})`;
+              };
+              reader.readAsDataURL(file);
+          }
+      });
+  
+      // Adicionar evento de clique para o botão de reset
+      resetBtn.addEventListener('click', function () {
+          localStorage.removeItem('backgroundImage');
+          loadBackgroundImage();
+      });
+  });
+  
