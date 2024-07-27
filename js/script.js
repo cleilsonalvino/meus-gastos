@@ -109,3 +109,20 @@ document.getElementById('openSheetsButton').addEventListener('click', function (
       });
   });
   
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.getElementById('menu');
+    const sideMenu = document.getElementById('barra');
+    const verDados = document.getElementById('verDados');
+
+
+    menuButton.addEventListener('click', () => {
+        if (sideMenu.style.width === '0vw' || sideMenu.style.width === '') {
+            sideMenu.style.width = '60vw';
+            sideMenu.style.boxShadow = '1px 12px 50px 0px white'
+        } else {
+            sideMenu.style.width = '0vw';
+            sideMenu.style.boxShadow = 'none'
+        }
+    });
+});
