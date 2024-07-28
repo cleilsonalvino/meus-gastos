@@ -24,15 +24,7 @@ function fetchData() {
                 total.innerHTML = row.Total
             });
 
-            document.querySelectorAll('.edit').forEach(button => {
-                button.addEventListener('click', handleEdit);
-            });
-
-            document.querySelectorAll('.delete').forEach(button => {
-                button.addEventListener('click', handleDelete);
-            });
-        })
-        .catch(error => console.error('Erro ao buscar dados:', error));
+            
 }
 
 
