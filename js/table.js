@@ -17,10 +17,6 @@ function fetchData() {
                     <td>${row.Data}</td>
                     <td>${row.Item}</td>
                     <td>${row.Valor}</td>
-                    <td>
-                        <button class="edit" data-id="${row.id}">Editar</button>
-                        <button class="delete" data-id="${row.id}">Deletar</button>
-                    </td>
                 `;
                 tbody.appendChild(tr);
 
@@ -37,30 +33,6 @@ function fetchData() {
             });
         })
         .catch(error => console.error('Erro ao buscar dados:', error));
-}
-
-function handleEdit(event) {
-    const id = event.target.getAttribute('data-id');
-    alert('Editar funcionalidade ainda não implementada para o ID: ' + id);
-}
-
-function handleDelete(event) {
-    const id = event.target.getAttribute('data-id');
-    if (confirm('Você tem certeza que deseja deletar este registro?')) {
-        fetch(`${SHEETDB_URL}/id/${id}`, {
-            method: 'DELETE',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            fetchData(); // Recarregar dados após deletar
-        })
-        .catch(error => console.error('Erro ao deletar registro:', error));
-    }
 }
 
 
