@@ -1,9 +1,0 @@
-{
-    "rewrites": [
-      {
-        "source": "/api/:path*",
-        "destination": "https://sheetdb.io/api/v1/:path*"
-      }
-    ]
-  }
-  
