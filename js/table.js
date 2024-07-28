@@ -22,7 +22,6 @@ function fetchData() {
             });
 
             const total = document.querySelector("#total");
-            total.innerHTML = data.reduce((sum, row) => sum + parseFloat(row.Total || 0), 0);
         })
         .catch(error => {
             console.error('Error fetching data:', error);
