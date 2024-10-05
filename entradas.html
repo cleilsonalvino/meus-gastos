@@ -1,4 +1,17 @@
-*{
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gastos</title>
+<link rel="shortcut icon" href="./images/icons/money-bag.png" type="image/x-icon">
+
+  <!-- Ícones para Android -->
+  <link rel="icon" sizes="192x192" href="./images/icons/icon-192x192.png">
+  <link rel="icon" sizes="512x512" href="./images/icons/icon-512x512.png">
+
+  <style>
+    *{
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
@@ -10,11 +23,10 @@ nav{
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
+  background-color: #6b6b6b70;
 }
 nav #saldoExibido{
   color: white;
-  margin: 10px;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 
@@ -41,7 +53,7 @@ body{
  background-size: cover;
  background-repeat: no-repeat;
  background-position: center;
- background-image: url('/images/fundo.jpg');
+ background-image: url('/images/cidade-noite.jpg');
  overflow-y: hidden;
  font-family: "Arial", sans-serif;
 }
@@ -59,10 +71,10 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 position: relative;
-top: 4%;
-width: 70%;
-height: 80%;
+width: 100%;
+height: 100%;
 margin: auto;
+background-color: #6b6b6b70;
 }
 
 .subtitulo {
@@ -316,3 +328,58 @@ margin: 10px;
     left: unset;
   }
 }
+
+  </style>
+
+</head>
+<body style="background-image: url('./images/cidade-noite.jpg');">
+  <nav>
+    <button class="button" id="mostrarSaldo">Mostrar Saldo</button> <span id="saldoExibido"></span>
+  </nav>
+    <section>
+    <h1 class="titulo">Entradas</h1>
+      
+    <div class="form1">
+        <input class="input1" placeholder="Origem" type="text" id="item">
+        <span class="input-border1"></span>
+    </div>
+    <br>
+    <div class="form1">
+        <input class="input1" placeholder="Valor" type="number" id="valor" step="0.1">
+        <span class="input-border1"></span>
+    </div>
+    <br>
+    <div class="form1">
+        <input class="input1" type="date" id="data">
+        <span class="input-border"></span>
+    </div>
+    <br><br>
+    <div>
+        <button type="submit" class="btn1" onclick="enviarEntrada()">
+            <i class="animation1"></i>
+            Enviar
+            <i class="animation1"></i>
+        </button>
+    </div>
+    <br>
+    <div>
+        <button type="button" class="btn1" onclick="window.location.href='index.html';">
+            <i class="animation1"></i>
+            Gastos
+            <i class="animation1"></i>
+        </button>
+    </div>
+
+    <div id="loader">
+    </div>
+    <p id="okk" class="paragrafo">Dados Enviados com sucesso!</p>
+    <h2 class="subtitulo">Todos os direitos reservados a Cleilson Alvino</h2>
+    <h3 class="subtitulo2">CopyRight 2024 &copy;</h3>
+   <button id="openSheetsButton">Abrir Google Planilhas</button>
+</section>
+
+  <script src="./js/enviarSaldo.js">
+  </script>
+  <script src="public/js/buscarsaldo.js"></script>i
+</body>
+</html>
